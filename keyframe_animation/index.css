@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+body{
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+a{
+  text-decoration: none;
+}
+/* 점 세개 로딩 */
+.loading_dots{
+  margin: 30px;
+}
+.loading_dots span{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  animation: loading_dots 1s linear infinite;
+  /* 부드럽게 넘어가게 함 : linear */
+}
+.loading_dots span:nth-child(1){
+  animation-delay: 0s;
+/* 딜레이 없이 @keyframe을 실행함. default가 0s이므로 굳이 설정 안해줘도 됨*/
+  background-color: red;
+}
+.loading_dots span:nth-child(2){
+  animation-delay: 0.3s;
+  background-color: dodgerblue;
+}
+.loading_dots span:nth-child(3){
+  animation-delay: 0.5s;
+  background-color: yellowgreen;
+}
+
+@keyframes loading_dots{
+  0%{
+    opacity: 0;
+    transform: scale(0.5) ;
+  }
+  50%{
+    opacity: 1;
+    transform: scale(1.2) ;
+  }
+  100%{
+    opacity: 0;
+    transform: scale(0.5) ;
+  }
+}
+/* 네모 회전 */
+.loading_squre{
+  border: 1px solid lightgray;
+  width: 30px;
+  height: 30px;
+  margin: 30px;
+  position: relative;
+}
+.loading_squre span{
+  animation: loading_squre 1.5s infinite;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0;
+  left: 0;
+  background-color: lightgray;
+}
+.loading_squre span:nth-child(1){
+  background-color: crimson;
+}
+.loading_squre span:nth-child(2){
+  animation-delay: 0.8s;
+}
+
+@keyframes loading_squre {
+  0%{
+    top: 0;
+    left: 0;
+    /* 처음에 left로 좌표잡았으면 다음도 left로 */
+  }
+  25%{
+    top: 0;
+    left:calc(100% - 10px);
+    background-color: dodgerblue;
+  }
+  50%{
+    top: calc(100% - 10px);
+    left: calc(100% - 10px);
+    background-color: orange;
+  }
+  75%{
+    top: calc(100% - 10px);
+    left: 0;
+    background-color: yellowgreen;
+  }
+  100%{
+    top: 0;
+    left: 0;
+  }
+}
