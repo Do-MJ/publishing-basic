@@ -9,6 +9,7 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-color: #333;
 }
 a{
   text-decoration: none;
@@ -102,5 +103,86 @@ a{
   100%{
     top: 0;
     left: 0;
+  }
+}
+/* //////////////////////////////////////// */
+/* 더블 보더 레디어스 */
+.container{
+  display: flex;
+}
+.squre{
+  width: 400px;
+  height: 400px;
+  position: relative;
+  margin: 40px;
+}
+.squre span{
+  position: absolute;
+  /* inherit = 100% */
+  width: inherit;
+  height: inherit;
+  border: 1px solid white;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+  /* transition은 hover 시 bgcolor delay시간에 쓰임 */
+  transition: 0.5s;
+}
+.squre span:nth-child(1){
+  animation: circle 6s linear infinite;
+}
+.squre span:nth-child(2){
+  animation: circle 4s linear infinite reverse;
+  /* animation-direction:reverse; */
+}
+.squre span:nth-child(3){
+  animation: circle 10s linear infinite;  
+}
+.squre div {
+  /* border: 1px solid #000; */
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  text-align: center;
+  color:white;
+}
+.squre div a{
+  color:white;
+  border: 1px solid white;
+  padding: 9px;
+  border-radius: 40% 60% 65% 35% / 40% 45% 55% 60%;
+}
+
+.squre:nth-child(1):hover span{
+  background-color: crimson;
+  border: none;
+}
+.squre:nth-child(2):hover span{
+  background-color: dodgerblue;
+  border: none;
+}
+.squre:nth-child(3):hover span{
+  background-color: yellowgreen;
+  border: none;
+}
+.squre:hover span:nth-child(1){
+  opacity: 0.3;
+    /* background-color: crimson; */
+}
+.squre:hover span:nth-child(2){
+  opacity: 0.6;
+  /* background-color: dodgerblue; */
+}
+.squre:hover span:nth-child(3){
+  opacity: 0.8;
+  /* background-color: yellowgreen; */
+}
+
+@keyframes circle {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(360deg);
   }
 }
