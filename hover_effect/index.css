@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+body{
+  font-family: 'Raleway',sans-serif;
+  color:#222;
+  line-height: 1.5em;
+  font-weight: 300;;
+  margin: 0;
+}
+a {
+  color:#222;
+  text-decoration: none;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  height: 100vh;
+}
+.icon {
+  width: 125px;
+  height: 125px;
+  /* w,h는 이미지크기임 */
+  margin: 10px;
+  position: relative;
+}
+.icon span{
+  position: absolute;
+  background-color: black;
+  color:white;
+  width: 300px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  /* display: none; */
+  opacity: 0;
+  transition: 0.6s;
+  /* 툴팁 자리에 있는 것도 hover로 인식되므로 추가해야함 */
+  visibility:hidden;
+  /* 값은 존재하되, 반응하지 않게함. */
+}
+.icon span:after {
+  content:'';
+  position: absolute;
+  /* .icon span 이 자동으로 relative가 됨 */
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  bottom: -5px;
+  left: 50%;
+  transform: rotate(45deg) translateX(-50%);
+}
+.icon:hover span{
+  /* display: block; */
+  opacity:1;
+  visibility:visible;
+}
