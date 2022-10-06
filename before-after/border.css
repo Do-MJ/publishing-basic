@@ -1,0 +1,66 @@
+/* Google Web Font */
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+/* Fontawesome 4.7 */
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+body {
+  font-family: 'Raleway',sans-serif;
+  line-height: 1.5em;
+  margin: 0;
+  color:#222; 
+  font-weight: 300;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+a {
+  text-decoration: none;
+  color:#222;
+}
+.gnb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.175);
+  padding: 50px 30px;
+  display: flex;
+}
+
+.gnb li {
+  /* box-sizing: border-box;
+  border: 1px solid red;
+  float: left;
+  width: 120px; */
+  /* 전체 gnb w:600px 이므로 %5 하면 됨 */
+  text-align: center;
+  flex:1;
+  /* 부모요소에 flex 준 경우. flex :1 을 하면 균등분배됨 */
+}
+
+.gnb li a {
+  font-size: 14px;
+  position: relative;
+}
+.gnb li a:before {
+  /* .gnb li a:after 로 만들어도 됨!! */
+  content:'';
+  position: absolute;
+  background-color: dodgerblue;
+  height: 2px;
+  width: 0;
+  bottom: -7px;
+  transition: 0.5s;
+  /* 기본 left:0; 왼쪽에서 오른쪽으로 밑줄 */
+  /* right:0 오른쪽에서 왼쪽으로 밑줄  */
+  /* 가로 중앙 */
+  left:50%;
+  transform: translateX(-50%);
+}
+.gnb li a:hover:before {
+  width: 100%;
+}
