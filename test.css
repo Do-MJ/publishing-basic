@@ -1,0 +1,42 @@
+.btn{
+  position: relative;
+  /* border: 1px solid #000; */
+  overflow: hidden;
+  width: 300px;
+  text-align: center;
+  line-height: 40px;
+  justify-items: center;
+}
+.btn span{
+  float:left;
+  box-sizing: border-box;
+  display: block;
+  width: 150px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  border-bottom: none;
+}
+.btn span:first-child{
+  background-color: #fff;
+}
+.btn span:last-child{
+  background-color: lightgray;
+}
+.list{
+  position: absolute;
+  top: 45px;
+  border: 1px solid #000;
+  width: 500px;
+}
+a{
+  background-color: #fff;
+  display: block;
+  text-decoration: none;
+  color:black;
+  padding:10px 20px;
+  border-bottom: 1px solid #000;
+}
+a:last-child{
+  border-bottom: none;
+}
