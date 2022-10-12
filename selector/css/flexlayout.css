@@ -21,9 +21,11 @@ a {
 }
 .gallery li {
   border-right: 5px solid #000;
+  /* flex:1 을 하니 균등하게 분배됨(가로가) */
   flex:1;
   transition:0.5s;
   position: relative;
+  overflow: hidden;
 }
 .gallery li:last-child {
   border-right:   none;
@@ -43,16 +45,43 @@ a {
 .gallery li:nth-child(5) {
   background: url(../images/artistic-image-05.jpg) no-repeat center center;
 }
-
 .gallery:hover li {
   flex:1;
 }
 .gallery li:hover {
   flex:3;
+  /* 마우스가 올라간 그 부분만 가로 3등분시 길이로 넓어짐 */
   /* filter 속성은 브라우저 호환 문제 있을 수 있음. */
   filter:grayscale(1);
 }
 .content {
   position: absolute;
-  
+  background-color: #000;
+  color:white;
+  text-align: center;
+  bottom: -320px;
+  height: 250px;
+  transition:0.5s;
+  box-sizing: border-box;
+  padding-top: 50px;
+}
+.sns a {
+  color: #333;
+}
+.gallery li:hover .content {
+  bottom: 0;
+  transition-delay: 0.5s;
+  /* transition 0.5초 이후.... */
+}
+.content:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  background-color: #000;
+  width: 100%;
+  height: 80px;
+  left: 0;
+  top: -10px;
+  transform-origin:left bottom;
+  transform: rotate(-3deg) scale(1.3);
 }
